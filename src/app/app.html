@@ -1,0 +1,17 @@
+<div id="maindiv">
+  <div id="secdiv">
+    <p id="para">Enter your text or URL</p>
+    <input type="text" id="txtinput" [(ngModel)]="qrInput" />
+    <div id="imgBox">
+      <app-qr *ngIf="qrData" [data]="qrData"></app-qr>
+    </div>
+    <input type="button" value="Generate QR Code" id="button" (click)="generateQR()" />
+    <input 
+      *ngIf="qrData"
+      type="button"
+      value="Download QR Code"
+      id="downloadBtn"
+      (click)="downloadQR()" />
+  </div>
+</div>
+<router-outlet />
